@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		* {box-sizing: border-box;}
+
+		body { 
+		  margin: 0;
+		  font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.header {
+		  overflow: hidden;
+		  background-color: white;
+		  padding: 20px 10px;
+		}
+
+		.header a {
+		  float: left;
+		  color: black;
+		  text-align: center;
+		  padding: 12px;
+		  text-decoration: none;
+		  font-size: 12px; 
+		  line-height: 25px;
+		  border-radius: 4px;
+		}
+
+		.header a.logo {
+		  font-size: 25px;
+		  font-weight: bold;
+		}
+
+		.header a:hover {
+		  background-color: #ddd;
+		  color: black;
+		}
+
+		.header a.active {
+		  background-color: darkgreen;
+		  color: white;
+		}
+
+		.header-right {
+		  float: right;
+		}
+
+		.footer {
+			position: fixed;
+			text-align: center;
+			color: white;
+      padding: 10px 10px 0px 10px;
+      bottom: 0;
+      width: 100%;
+      height: 40px;
+      background: darkgreen;
+		}
+
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">
+  		<img src="https://www.nindyakarya.co.id/lib/images/nindya-karya-logo.png" height="60px">
+  	<div class="header-right">
+    	<a href="dashboard.html" class="active">Dashboard</a>
+    	<a href="report.html">Report</a>
+    	<a href="login.html">Logout</a>
+    </div>
+  </div>
+</div>
+
+<div style="padding-left: 20px">
+	<h1 style="font-size: 55px">
+    Production Chart
+  </h1>
+  <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+</div>
+
+<script>
+	var xValues = [" ", "Wilayah 1", "Wilayah 2", "Wilayah 3", "Wilayah 4", "Wilayah 5"];
+	var yValues = [0, 100000, 150000, 200000, 300000, 300000];
+	var barColors = [" ", "orange", "red","darkgreen","blue","lightblue"];
+
+	new Chart("myChart", {
+	  type: "bar",
+	  data: {
+	    labels: xValues,
+	    datasets: [{
+	      backgroundColor: barColors,
+	      data: yValues
+	    }]
+	  },
+	  options: {
+	    legend: {display: false},
+	    title: {
+	      display: false
+	    }
+	  }
+	});
+</script>
+
+<div class="footer">
+	021 8093276 | nindyakarya@nindyakarya.co.id | Jl. Letjend MT. Haryono Kav. 22 Jakarta 13630
+</div>
+</body>
+</html>
